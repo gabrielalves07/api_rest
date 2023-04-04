@@ -1,5 +1,6 @@
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  async up(queryInterface, Sequelize) {
     await queryInterface.createTable('alunos', {
       id: {
         type: Sequelize.INTEGER,
@@ -31,18 +32,18 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
-      createdAt: {
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      updatedAt: {
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
     });
   },
 
-  down: async (queryInterface) => {
+  async down(queryInterface) {
     await queryInterface.dropTable('alunos');
   },
 };
